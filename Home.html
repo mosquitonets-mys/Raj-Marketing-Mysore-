@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raj Marketing - Mosquito Nets Mysore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #ececec;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #222;
+        }
+        /* Header & Navigation */
+        .header-card {
+            background: #1565c0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: relative;
+            width: 100%;
+            z-index: 10;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 80px;
+        }
+        /* Hamburger Menu */
+        .menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 18px;
+        }
+        .menu-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            position: relative;
+        }
+        .menu-icon span {
+            display: block;
+            height: 4px;
+            width: 100%;
+            background: #fff;
+            margin: 6px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            left: 0;
+            top: 80px;
+            background: #fff;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+            border-radius: 0 0 12px 0;
+            min-width: 200px;
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+        }
+        .dropdown-menu.show {
+            display: flex;
+            animation: fadeInMenu 0.25s;
+        }
+        @keyframes fadeInMenu {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .dropdown-menu a {
+            padding: 14px 24px;
+            color: #1565c0;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-bottom: 1px solid #ececec;
+            transition: background 0.15s;
+        }
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover {
+            background: #e3f2fd;
+        }
+        /* Business Info */
+        .business-info {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex: 1;
+            justify-content: flex-start;
+        }
+        .business-name {
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #FFD700 60%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-right: 12px;
+        }
+        .contact-number {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #fffde7;
+            background: rgba(21,101,192,0.22);
+            border-radius: 6px;
+            padding: 6px 20px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .header-content { flex-direction: row; align-items: center; height: 70px; padding: 0 10px;}
+            .business-name { font-size: 1.1em;}
+            .contact-number { font-size: 1em; padding: 5px 12px;}
+            .dropdown-menu { min-width: 140px; }
+        }
+        /* Video Section */
+        .video-section {
+            max-width: 850px;
+            margin: 30px auto 12px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 16px 0 24px 0;
+            text-align: center;
+        }
+        .video-section iframe {
+            width: 96%;
+            height: 350px;
+            border-radius: 10px;
+            border: none;
+        }
+        @media (max-width: 700px) {
+            .video-section iframe { height: 210px;}
+        }
+        /* Description Sections */
+        .business-desc, .why-us-section {
+            max-width: 850px;
+            margin: 22px auto 0 auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+            padding: 26px 22px;
+            font-size: 1.15em;
+        }
+        .business-desc b, .why-us-section b { color: #1565c0;}
+        .why-us-section {
+            margin-top: 18px;
+            padding-top: 20px;
+            padding-bottom: 22px;
+        }
+        .why-us-section h2 {
+            color: #1565c0;
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        /* Footer */
+        .footer {
+            background: #263238;
+            color: #fffde7;
+            margin-top: 40px;
+            padding: 28px 0 16px 0;
+        }
+        .footer-cols {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            justify-content: space-between;
+            gap: 18px;
+        }
+        .footer-col {
+            flex: 1 1 220px;
+            min-width: 160px;
+        }
+        .footer-col h4 {
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #ffe082;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 7px;
+        }
+        .footer-col ul li a {
+            color: #fffde7;
+            text-decoration: none;
+            font-size: 0.98em;
+        }
+        .footer-col ul li a:hover {
+            text-decoration: underline;
+            color: #ffd54f;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.95em;
+            color: #b0bec5;
+        }
+        @media (max-width: 700px) {
+            .footer-cols { max-width: 99vw; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Menu -->
+    <div class="header-card">
+        <div class="header-content">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <span class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <div class="business-info">
+                <span class="business-name">Raj Marketing</span>
+                <span class="contact-number">📞 9483037385</span>
+            </div>
+        </div>
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="#about">About Us</a>
+            <a href="#products">Product</a>
+            <a href="#book">Book Now</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </div>
+    <!-- Video Section -->
+    <div class="video-section">
+        <iframe src="https://www.youtube.com/embed/Hyg6lvnLXWk?autoplay=1&mute=1&controls=1&loop=1" allowfullscreen></iframe>
+    </div>
+    <!-- Description below video -->
+    <div class="business-desc" id="about">
+        <b>Raj Marketing</b> is your trusted partner in Mysore for mosquito net solutions for windows and doors. With a reputation for quality, reliability, and professional service, we offer customized gold and silver mesh products, easy installation, and excellent after-sales support. 
+        <br><br>
+        <span style="color:#1565c0;font-weight:500;">(Search online: <b>Raj Marketing Mysore</b> for more information)</span>
+    </div>
+    <!-- Why Choose Us Section -->
+    <div class="why-us-section" id="whyus">
+        <h2>Why You Choose Us?</h2>
+        <ul style="padding-left:18px; margin-bottom:0;">
+            <li><b>Premium Quality:</b> Gold & Silver mesh options for long-lasting protection.</li>
+            <li><b>Professional Installation:</b> Quick, clean, and effective fitting for all windows and doors.</li>
+            <li><b>Custom Sizes:</b> Solutions tailored exactly to your home or business requirements.</li>
+            <li><b>Elegant Design:</b> Our nets blend seamlessly with any interior decor.</li>
+            <li><b>Trusted Service:</b> Decades of experience serving Mysore and surrounding areas.</li>
+            <li><b>Affordable Pricing:</b> Best value for money with guaranteed satisfaction.</li>
+            <li><b>After-Sales Support:</b> Reliable customer care whenever you need it.</li>
+        </ul>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Products</h4>
+                <ul>
+                    <li>Mosquito Net for Windows</li>
+                    <li>Mosquito Net for Doors</li>
+                    <li>Gold Mesh</li>
+                    <li>Silver Mesh</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Phone: 9483037385</li>
+                    <li>Email: <a href="mailto:info@rajmarketingmysore.com">info@rajmarketingmysore.com</a></li>
+                    <li>Mysore, Karnataka</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#book">Book Now</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Raj Marketing, Mysore. All rights reserved.
+        </div>
+    </div>
+    <!-- Dropdown Menu JS -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        let menuOpen = false;
+        menuBtn.addEventListener('click', function() {
+            menuOpen = !menuOpen;
+            dropdownMenu.classList.toggle('show', menuOpen);
+        });
+        // Hide menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+                menuOpen = false;
+            }
+        });
+        // Accessibility: Close menu with ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                dropdownMenu.classList.remove('show');
+                menuOpen = false;
+            }
+        });
+    </script>
+</body>
+</html>
